@@ -24,10 +24,8 @@
 	},
 	"include": [
 		"src",
-		"backend",
 		"dev/index copy.ts",
 		"src/types.ts",
-		"share/config.ts"
 	],
 	"references": [
 		{
