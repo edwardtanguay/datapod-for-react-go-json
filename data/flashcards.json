@@ -1,6 +1,6 @@
 [
   {
-    "suuid": "82Js23",
+    "suuid": "82zs23",
     "category": "linux",
     "front": "how to find out your shell",
     "back": "echo $0"
