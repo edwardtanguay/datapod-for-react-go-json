@@ -1,5 +1,5 @@
 import { action, Action, thunk, Thunk } from "easy-peasy";
-import { FrontendFlashcard } from "../../../share/types";
+import { FrontendFlashcard } from "../../types";
 import * as dataModel from "../dataModel";
 import { StoreModel } from "../store";
 
@@ -17,12 +17,6 @@ export interface FlashcardModel {
 	// thunks
 	loadFlashcardsThunk: Thunk<this>;
 	toggleFrontendFlashcardThunk: Thunk<
-		this,
-		FrontendFlashcard,
-		void,
-		StoreModel
-	>;
-	deleteFlashcardFromDatasourceThunk: Thunk<
 		this,
 		FrontendFlashcard,
 		void,
@@ -63,7 +57,7 @@ export const flashcardModel: FlashcardModel = {
 	// thunks
 	loadFlashcardsThunk: thunk((actions) => {
 		(async () => {
-			const _frontendFlashcards = await dataModel.getFlashcards();
+			const _frontendFlashcards = dataModel.getFlashcards();
 			actions.setFrontendFlashcards(_frontendFlashcards);
 		})();
 	}),
@@ -81,33 +75,6 @@ export const flashcardModel: FlashcardModel = {
 					);
 			}
 			actions.saveFrontendFlashcard(frontendFlashcard);
-		}
-	),
-	deleteFlashcardFromDatasourceThunk: thunk(
-		async (actions, frontendFlashcard, helpers) => {
-			try {
-				const dataModelResponse = await dataModel.deleteFlashcard(
-					frontendFlashcard.suuid
-				);
-				if (dataModelResponse.success) {
-					helpers
-						.getStoreActions()
-						.mainModel.setMessage(dataModelResponse.message);
-					actions.deleteFrontendFlashcard(frontendFlashcard);
-				} else {
-					helpers
-						.getStoreActions()
-						.mainModel.setMessage(dataModelResponse.message);
-					console.log(dataModelResponse.message);
-				}
-			} catch (e: unknown) {
-				helpers
-					.getStoreActions()
-					.mainModel.setMessage(
-						`ERROR: flashcard ${frontendFlashcard.suuid} could not be deleted`
-					);
-				console.error((e as Error).message, e);
-			}
 		}
 	),
 };
