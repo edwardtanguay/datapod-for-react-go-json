@@ -11,7 +11,6 @@ export interface FlashcardModel {
 	// actions
 	setFrontendFlashcards: Action<this, FrontendFlashcard[]>;
 	saveFrontendFlashcard: Action<this, FrontendFlashcard>;
-	deleteFrontendFlashcard: Action<this, FrontendFlashcard>;
 	incrementAnswersShown: Action<this>;
 
 	// thunks
@@ -40,14 +39,6 @@ export const flashcardModel: FlashcardModel = {
 		if (index !== -1) {
 			state.frontendFlashcards[index] =
 				structuredClone(frontendFlashcard);
-		}
-	}),
-	deleteFrontendFlashcard: action((state, frontendFlashcard) => {
-		const index = state.frontendFlashcards.findIndex(
-			(s) => s.suuid === frontendFlashcard.suuid
-		);
-		if (index !== -1) {
-			state.frontendFlashcards.splice(index, 1);
 		}
 	}),
 	incrementAnswersShown: action((state) => {

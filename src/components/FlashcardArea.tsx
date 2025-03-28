@@ -4,7 +4,7 @@ export const FlashcardArea = () => {
 	const { frontendFlashcards } = useTypedStoreState(
 		(state) => state.flashcardModel
 	);
-	const { toggleFrontendFlashcardThunk, deleteFlashcardFromDatasourceThunk } =
+	const { toggleFrontendFlashcardThunk } =
 		useTypedStoreActions((actions) => actions.flashcardModel);
 
 	return (
@@ -26,14 +26,6 @@ export const FlashcardArea = () => {
 								<p className="font-mono text-orange-800 text-sm">
 									{ff.back}
 								</p>
-								<button
-									className="btn-small"
-									onClick={() =>
-										deleteFlashcardFromDatasourceThunk(ff)
-									}
-								>
-									Delete
-								</button>
 							</div>
 						)}
 					</div>
