@@ -7,6 +7,8 @@ import (
 )
 
 func main() {
+
+	devlog("this will parse the data")
 	file, err := os.Open("./data/flashcards.txt")
 	if err != nil {
 		fmt.Println("Error opening file:", err)
