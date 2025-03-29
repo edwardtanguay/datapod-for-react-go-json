@@ -7,10 +7,10 @@ import (
 
 func main() {
 
-	utils.Devlog("this will parse the data")
+	utils.Devlog("printing flashcard file")
 	lines := utils.GetLinesFromFile("../../../data/flashcards.txt")
 
 	for i, line := range lines {
-		fmt.Printf("%d: WORKS: %s\n", i+1, line)
+		fmt.Printf("%03d: %s\n", i+1, line)
 	}
 }

@@ -10,5 +10,5 @@ devlog("no files are locked")
 devlog(fmt.Sprintf("There are %d flashcards.", len(flashcards)))
 */
 func Devlog(line string) {
-	fmt.Printf("444>>> %s\n", line)
+	fmt.Printf("DEBUG ### %s ################################\n", line)
 }
