@@ -1,4 +1,4 @@
-package main
+package tools
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-func devlog(line string) {
+func Devlog(line string) {
 	fmt.Printf("2>>> %s\n", line)
 }
 
@@ -17,7 +17,7 @@ lines := getLinesFromFile("../../notes.txt")
 
 - use relative path
 */
-func getLinesFromFile(fileName string) []string {
+func GetLinesFromFile(fileName string) []string {
 	byteContents, err := os.ReadFile(fileName)
 	if err != nil {
 		panic(err)

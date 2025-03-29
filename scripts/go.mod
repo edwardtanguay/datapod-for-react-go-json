@@ -1,3 +1,3 @@
-module github.com/edwardtanguay/datapod-for-react-go-json
+module datapodforreactgojson
 
 go 1.22.1
