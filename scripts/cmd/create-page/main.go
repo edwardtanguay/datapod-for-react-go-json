@@ -1,7 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"datapod-for-react-go-json/utils"
+)
 
 func main() {
-	fmt.Println("this will parse data in a text file into a JSON file")
+	utils.Devlog()
 }
