@@ -1,7 +1,7 @@
 package main
 
 import (
-	"datapodforreactgojson/cmd/tools"
+	"datapod-for-react-go-json/cmd/tools"
 	"fmt"
 )
 
