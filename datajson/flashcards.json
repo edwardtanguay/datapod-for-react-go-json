@@ -1,26 +1,44 @@
 [
-  {
-    "suuid": "82zs23",
-    "category": "linux",
-    "front": "how to find out your shell",
-    "back": "echo $0"
-  },
-  {
-    "suuid": "2Jjq4a",
-    "category": "git",
-    "front": "get back file from staging area to working directory, i.e. unstage a file",
-    "back": "git reset [file]"
-  },
-  {
-    "suuid": "891As1",
-    "category": "git",
-    "front": "show commit history with hash, title, author",
-    "back": "git log --pretty=format:\"%h - %s - %an\" "
-  },
-  {
-    "suuid": "3bCd45",
-    "category": "linux",
-    "front": "navigate to the home directory",
-    "back": "cd ~"
-  }
+	{
+		"suuid": "e1e1Tr",
+		"category": "general",
+		"front": "it",
+		"back": "and it will take some time"
+	},
+	{
+		"suuid": "MSTXfD",
+		"category": "general",
+		"front": "e ci vorrà del tempo",
+		"back": ""
+	},
+	{
+		"suuid": "LkfhGm",
+		"category": "general",
+		"front": "it",
+		"back": "this will ensure that you get"
+	},
+	{
+		"suuid": "DoKPtq",
+		"category": "general",
+		"front": "cìo garantirà di ottenere",
+		"back": ""
+	},
+	{
+		"suuid": "c9z1qP",
+		"category": "general",
+		"front": "es",
+		"back": "this has certain advantages"
+	},
+	{
+		"suuid": "U2CzW4",
+		"category": "general",
+		"front": "est tiene ciertas ventajas",
+		"back": ""
+	},
+	{
+		"suuid": "0jH2am",
+		"category": "general",
+		"front": "es",
+		"back": "in such a way that"
+	}
 ]
