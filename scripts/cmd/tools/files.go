@@ -1,14 +1,9 @@
 package tools
 
 import (
-	"fmt"
 	"os"
 	"strings"
 )
-
-func Devlog(line string) {
-	fmt.Printf("2>>> %s\n", line)
-}
 
 /*
 Get all lines from a file as a slice of strings
