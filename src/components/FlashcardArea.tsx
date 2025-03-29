@@ -4,8 +4,9 @@ export const FlashcardArea = () => {
 	const { frontendFlashcards } = useTypedStoreState(
 		(state) => state.flashcardModel
 	);
-	const { toggleFrontendFlashcardThunk } =
-		useTypedStoreActions((actions) => actions.flashcardModel);
+	const { toggleFrontendFlashcardThunk } = useTypedStoreActions(
+		(actions) => actions.flashcardModel
+	);
 
 	return (
 		<div>
@@ -19,7 +20,7 @@ export const FlashcardArea = () => {
 							className="bg-slate-600 text-slate-200 p-2 rounded-t cursor-pointer"
 							onClick={() => toggleFrontendFlashcardThunk(ff)}
 						>
-							{ff.front}
+							{ff.front} ({ff.category})
 						</div>
 						{ff.isOpen && (
 							<div className="bg-slate-300 p-2 rounded-b flex justify-between items-center">

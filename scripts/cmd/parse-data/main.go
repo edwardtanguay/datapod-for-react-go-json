@@ -16,25 +16,20 @@ type Flashcard struct {
 }
 
 func main() {
-	utils.Devlog("parsing flashcards.txt into flashcards.json...")
+	fmt.Println("parsing flashcards.txt into flashcards.json...")
 	lines := utils.GetLinesFromFile("../../../data/flashcards.txt")
 
 	var flashcards []Flashcard
-	for i := 0; i < len(lines); i += 2 {
-		if i+1 >= len(lines) {
+	for i := 0; i < len(lines); i += 4 {
+		if i+3 > len(lines) {
 			break
 		}
-		front := strings.TrimSpace(lines[i])
-		back := strings.TrimSpace(lines[i+1])
-		category := "general" // Default category
-		if strings.Contains(front, ":") {
-			parts := strings.SplitN(front, ":", 2)
-			category = strings.TrimSpace(parts[0])
-			front = strings.TrimSpace(parts[1])
-		}
+		category := strings.TrimSpace(lines[i])
+		front := strings.TrimSpace(lines[i+1])
+		back := strings.TrimSpace(lines[i+2])
 
 		flashcards = append(flashcards, Flashcard{
-			Suuid:    utils.GenerateShortUUID(6),
+			Suuid:    utils.GenerateShortUUID(),
 			Category: category,
 			Front:    front,
 			Back:     back,
@@ -53,5 +48,5 @@ func main() {
 		return
 	}
 
-	fmt.Println("Successfully updated flashcards.json")
+	fmt.Println("successfully updated flashcards.json")
 }

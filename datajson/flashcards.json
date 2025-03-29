@@ -1,44 +1,26 @@
 [
 	{
-		"suuid": "e1e1Tr",
-		"category": "general",
-		"front": "it",
-		"back": "and it will take some time"
+		"suuid": "KqVNuZ",
+		"category": "it",
+		"front": "and it will take some time",
+		"back": "e ci vorrà del tempo"
 	},
 	{
-		"suuid": "MSTXfD",
-		"category": "general",
-		"front": "e ci vorrà del tempo",
-		"back": ""
+		"suuid": "2Sb0tu",
+		"category": "it",
+		"front": "this will ensure that you get",
+		"back": "cìo garantirà di ottenere"
 	},
 	{
-		"suuid": "LkfhGm",
-		"category": "general",
-		"front": "it",
-		"back": "this will ensure that you get"
+		"suuid": "hkLGqW",
+		"category": "es",
+		"front": "this has certain advantages",
+		"back": "est tiene ciertas ventajas"
 	},
 	{
-		"suuid": "DoKPtq",
-		"category": "general",
-		"front": "cìo garantirà di ottenere",
-		"back": ""
-	},
-	{
-		"suuid": "c9z1qP",
-		"category": "general",
-		"front": "es",
-		"back": "this has certain advantages"
-	},
-	{
-		"suuid": "U2CzW4",
-		"category": "general",
-		"front": "est tiene ciertas ventajas",
-		"back": ""
-	},
-	{
-		"suuid": "0jH2am",
-		"category": "general",
-		"front": "es",
-		"back": "in such a way that"
+		"suuid": "12DDeA",
+		"category": "es",
+		"front": "in such a way that",
+		"back": "de tal manera que"
 	}
 ]
