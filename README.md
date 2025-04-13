@@ -10,6 +10,11 @@ https://tanguay-eu.vercel.app/howtos/899
 
 https://www.youtube.com/watch?v=eyCPlEsT2fE
 
+## Compatibility
+
+- ✔️ tested on Windows
+- ✔️ tested on Ubuntu
+
 ## More Datapod templates and sites
 
 https://datapod-tanguay-eu.vercel.app
