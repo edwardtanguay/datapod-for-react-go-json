@@ -9,3 +9,7 @@ https://tanguay-eu.vercel.app/howtos/899
 ## Video
 
 https://www.youtube.com/watch?v=eyCPlEsT2fE
+
+## More Datapod templates and sites
+
+https://datapod-tanguay-eu.vercel.app
