@@ -1,26 +1,26 @@
 [
 	{
-		"suuid": "KqVNuZ",
+		"suuid": "Yl16J4",
+		"category": "es",
+		"front": "in such a way that",
+		"back": "de tal manera que"
+	},
+	{
+		"suuid": "oFTArP",
 		"category": "it",
 		"front": "and it will take some time",
 		"back": "e ci vorrà del tempo"
 	},
 	{
-		"suuid": "2Sb0tu",
+		"suuid": "yug2dP",
 		"category": "it",
 		"front": "this will ensure that you get",
 		"back": "cìo garantirà di ottenere"
 	},
 	{
-		"suuid": "hkLGqW",
+		"suuid": "VdFVVd",
 		"category": "es",
 		"front": "this has certain advantages",
 		"back": "est tiene ciertas ventajas"
-	},
-	{
-		"suuid": "12DDeA",
-		"category": "es",
-		"front": "in such a way that",
-		"back": "de tal manera que"
 	}
 ]
