@@ -20,8 +20,8 @@ func Debug(obj interface{}) {
 }
 
 func DisplayStringStringMap(m map[string]string) {
-	fmt.Println("---")
 	for key, value := range m {
 		fmt.Printf("%v: \"%v\"\n", key, value)
 	}
+	fmt.Println("---")
 }
