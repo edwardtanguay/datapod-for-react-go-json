@@ -2,15 +2,15 @@ package main
 
 import (
 	"datapod-for-react-go-json/developer/learn"
+	"datapod-for-react-go-json/qtools/qcli"
 	"fmt"
 	"os"
-	// import "datapod-for-react-go-json/qtools/qcli"
 )
 
 func main() {
 	if len(os.Args) < 2 {
-		fmt.Println("Usage: go run main.go <exerciseNumber>")
-		fmt.Println("Example: go run main.go 001")
+		qcli.Message("Usage: go run main.go <exerciseNumber>", "info")
+		qcli.Message("Example: go run main.go 001", "info")
 		return
 	}
 
@@ -22,6 +22,6 @@ func main() {
 	case "002":
 		learn.Ex002()
 	default:
-		fmt.Printf("Invalid exercise number: %s\n", exerciseNumber)
+		qcli.Message(fmt.Sprintf("Invalid exercise number: %s\n", exerciseNumber), "error")
 	}
 }
