@@ -1,4 +1,4 @@
-package qtools
+package qdev
 
 import "fmt"
 

@@ -1,7 +1,7 @@
 package main
 
-import "datapod-for-react-go-json/qtools"
+import "datapod-for-react-go-json/qtools/qdev"
 
 func main() {
-	qtools.Debug("this will create a page333")
+	qdev.Debug("this will create a page444")
 }
