@@ -1,7 +1,8 @@
 package main
 
 import (
-	"datapod-for-react-go-json/utils"
+	"datapod-for-react-go-json/qtools/qfil"
+	"datapod-for-react-go-json/qtools/qstr"
 	"encoding/json"
 	"fmt"
 	"os"
@@ -17,7 +18,7 @@ type Flashcard struct {
 
 func main() {
 	fmt.Println("parsing flashcards.txt into flashcards.json...")
-	lines := utils.GetLinesFromFile("../../../data/flashcards.txt")
+	lines := qfil.GetLinesFromFile("../../../data/flashcards.txt")
 
 	var flashcards []Flashcard
 	for i := 0; i < len(lines); i += 4 {
@@ -29,7 +30,7 @@ func main() {
 		back := strings.TrimSpace(lines[i+2])
 
 		flashcards = append(flashcards, Flashcard{
-			Suuid:    utils.GenerateShortUUID(),
+			Suuid:    qstr.GenerateShortUUID(),
 			Category: category,
 			Front:    front,
 			Back:     back,
