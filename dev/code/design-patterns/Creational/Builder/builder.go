@@ -1,20 +1,10 @@
-package patternbuilder
-
+package main
 import "fmt"
 
-type Notification struct {
-	title    string
-	subtitle string
-	message  string
-	image    string
-	icon     string
-	priority int
-	notType  string
-}
-
+// The NotificationBuilder has fields exported as well as a few methods
+// to demonstrate
 type NotificationBuilder struct {
 	Title    string
-	SubTitle string
 	Message  string
 	Image    string
 	Icon     string
@@ -52,37 +42,18 @@ func (nb *NotificationBuilder) SetType(notType string) {
 
 func (nb *NotificationBuilder) Build() (Notification, error) {
 	if nb.Icon != "" && nb.SubTitle == "" {
-		return Notification{}, fmt.Errorf("subtitle required when using icon")
+		return nil, fmt.Errorf("You need to specify a subtitle when using an icon")
 	}
 	if nb.Priority > 5 {
-		return Notification{}, fmt.Errorf("priority must be 0 to 5")
+		return nil, fmt.Errorf("Priority must be 0 to 5")
 	}
 
 	return Notification{
 		title:    nb.Title,
-		subtitle: nb.SubTitle,
 		message:  nb.Message,
 		image:    nb.Image,
 		icon:     nb.Icon,
 		priority: nb.Priority,
 		notType:  nb.NotType,
 	}, nil
-}
-
-func Start() {
-	var bldr = newNotificationBuilder()
-	bldr.SetTitle("New Notification")
-	bldr.SetIcon("icon.png")
-	bldr.SetSubTitle("This is a subtitle")
-	bldr.SetImage("image.jpg")
-	bldr.SetPriority(5)
-	bldr.SetMessage("This is a basic notification")
-	bldr.SetType("alert")
-
-	notif, _ := bldr.Build()
-	if err != nil {
-		fmt.Println("Error creating the notification:", err)
-	} else {
-		fmt.Printf("Notification: %+v\n", notif)
-	}
 }
