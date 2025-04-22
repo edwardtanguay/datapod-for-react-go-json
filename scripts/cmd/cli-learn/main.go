@@ -9,21 +9,18 @@ import (
 )
 
 func displayExercises(exercises map[string]func()) {
-	var builder strings.Builder
-	builder.WriteString("\nAvailable exercises:\n")
+	qcli.Message("Usage: go run main.go <exerciseNumber>", "info")
+	qcli.Message("Example: go run main.go 001\n", "info")
+	fmt.Println("Available exercises:")
 
 	for key := range exercises {
 		parts := strings.SplitN(key, ";", 2)
 		if len(parts) > 1 {
-			builder.WriteString(fmt.Sprintf("  %s: %s\n", parts[0], parts[1]))
+			qcli.Message(fmt.Sprintf("%s: %s", parts[0], parts[1]), "star")
 		} else {
-			builder.WriteString(fmt.Sprintf("  %s\n", parts[0]))
+			qcli.Message(fmt.Sprintf("%s", parts[0]), "star")
 		}
 	}
-
-	qcli.Message(builder.String(), "info")
-	qcli.Message("Usage: go run main.go <exerciseNumber>", "info")
-	qcli.Message("Example: go run main.go 001", "info")
 }
 
 func main() {
