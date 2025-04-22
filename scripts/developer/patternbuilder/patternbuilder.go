@@ -30,6 +30,10 @@ func (nb *NotificationBuilder) SetTitle(title string) {
 	nb.Title = title
 }
 
+func (nb *NotificationBuilder) SetSubTitle(subTitle string) {
+	nb.SubTitle = subTitle
+}
+
 func (nb *NotificationBuilder) SetMessage(message string) {
 	nb.Message = message
 }
