@@ -3,10 +3,15 @@ package patternbuilder
 import "fmt"
 
 type Notification struct {
-	Message string
-	Status  string
+	title string
+	subtitle  string
+	message string
+	image string
+	icon string
+	priority int
+	notType string
 }
 
 func Start() {
-	fmt.Println("the notification pattern222")		
+	fmt.Printf("ok")
 }
