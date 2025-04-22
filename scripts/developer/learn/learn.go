@@ -2,6 +2,7 @@ package learn
 
 import (
 	"datapod-for-react-go-json/qtools/qdev"
+	"datapod-for-react-go-json/developer/patternbuilder"
 )
 
 func Ex001() {
@@ -19,5 +20,5 @@ func Ex001() {
 }
 
 func Ex002() {
-	qdev.Debug("doing...")
+	patternbuilder.Start()
 }
