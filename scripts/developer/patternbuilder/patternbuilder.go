@@ -77,9 +77,10 @@ func Start() {
 	var bldr = newNotificationBuilder()
 	bldr.SetTitle("New Notification")
 	bldr.SetIcon("icon.png")
-	bldr.SetSubTitle("This is a subtitle")
+	bldr.SetSubTitle("This is a subtitle") // blank subtitle will result in error
 	bldr.SetImage("image.jpg")
-	bldr.SetPriority(5)
+	bldr.SetPriority(5) // priority not 0 to 5 will result in error
+	bldr.SetImage("image.jpg")
 	bldr.SetMessage("This is a basic notification")
 	bldr.SetType("alert")
 
