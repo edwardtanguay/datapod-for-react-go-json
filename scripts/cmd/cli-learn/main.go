@@ -5,6 +5,7 @@ import (
 	"datapod-for-react-go-json/qtools/qcli"
 	"fmt"
 	"os"
+	"strings"
 )
 
 func main() {
@@ -17,16 +18,35 @@ func main() {
 	exerciseNumber := os.Args[1]
 
 	functions := map[string]func(){
-		"001": learn.Ex001,
-		"002": learn.Ex002,
+		"001;Working with map[string][string]": learn.Ex001,
+		"002;Design Pattern: Builder": learn.Ex002,
 	}
 
-	fn, exists := functions[exerciseNumber]
+	var fn func()
+	var title string
+	exists := false
+
+	for key, f := range functions {
+		parts := strings.SplitN(key, ";", 2)
+		if parts[0] == exerciseNumber {
+			fn = f
+			exists = true
+			if len(parts) > 1 {
+				title = parts[1]
+			}
+			break
+		}
+	}
+
 	if !exists {
-		qcli.Message(fmt.Sprintf("Invalid exercise number: %s\n", exerciseNumber), "error")
+		qcli.Message(fmt.Sprintf("Exercise number is not valid: %s\n", exerciseNumber), "error")
 		return
 	}
 
-	qcli.Message(fmt.Sprintf("Exercise Ex%s", exerciseNumber), "success")
+	if title != "" {
+		qcli.Message(fmt.Sprintf("EX%s: %s", exerciseNumber, title), "star")
+	} else {
+		qcli.Message(fmt.Sprintf("EX%s", exerciseNumber), "star")
+	}
 	fn()
 }

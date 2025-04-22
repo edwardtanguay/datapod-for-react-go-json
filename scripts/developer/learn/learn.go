@@ -1,13 +1,10 @@
 package learn
 
 import (
-	"datapod-for-react-go-json/qtools/qcli"
 	"datapod-for-react-go-json/qtools/qdev"
 )
 
 func Ex001() {
-	qcli.Message("Working with map[string][string]", "star")
-
 	frameworks := map[string]string{
 		"svelte":  "Svelte",
 		"angular": "Angular",
@@ -25,5 +22,5 @@ func Ex001() {
 }
 
 func Ex002() {
-	qcli.Message("This is exercise 002.", "success")
+	qdev.Debug("doing...")
 }
