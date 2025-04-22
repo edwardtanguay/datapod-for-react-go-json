@@ -26,5 +26,7 @@ func main() {
 		qcli.Message(fmt.Sprintf("Invalid exercise number: %s\n", exerciseNumber), "error")
 		return
 	}
+
+	qcli.Message(fmt.Sprintf("Exercise Ex%s", exerciseNumber), "success")
 	fn()
 }

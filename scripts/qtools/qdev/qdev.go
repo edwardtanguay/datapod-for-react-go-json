@@ -18,3 +18,10 @@ func Debug(obj interface{}) {
 	timestamp := time.Now().Format("2006-01-02 15:04:05")
 	fmt.Printf("🛠️  %s - %v\n", timestamp, obj)
 }
+
+func DisplayStringStringMap(m map[string]string) {
+	fmt.Println("---")
+	for key, value := range m {
+		fmt.Printf("%v: \"%v\"\n", key, value)
+	}
+}
