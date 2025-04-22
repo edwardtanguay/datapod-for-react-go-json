@@ -1,7 +1,9 @@
 package main
 
-import "datapod-for-react-go-json/utils"
+import "datapod-for-react-go-json/qtools/qdev"
+import "datapod-for-react-go-json/qtools/qcli"
 
 func main() {
-	utils.Devlog("this will create a page")
+	qdev.Debug("inside create page")
+	qcli.Message("this command will create a new page in the React app")
 }

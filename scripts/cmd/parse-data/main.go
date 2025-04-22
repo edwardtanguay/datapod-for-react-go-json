@@ -1,7 +1,9 @@
 package main
 
 import (
-	"datapod-for-react-go-json/utils"
+	"datapod-for-react-go-json/qtools/qcli"
+	"datapod-for-react-go-json/qtools/qfil"
+	"datapod-for-react-go-json/qtools/qstr"
 	"encoding/json"
 	"fmt"
 	"os"
@@ -16,8 +18,8 @@ type Flashcard struct {
 }
 
 func main() {
-	fmt.Println("parsing flashcards.txt into flashcards.json...")
-	lines := utils.GetLinesFromFile("../../../data/flashcards.txt")
+	qcli.Message("parsing flashcards.txt into flashcards.json...", "success")
+	lines := qfil.GetLinesFromFile("../../../data/flashcards.txt")
 
 	var flashcards []Flashcard
 	for i := 0; i < len(lines); i += 4 {
@@ -29,7 +31,7 @@ func main() {
 		back := strings.TrimSpace(lines[i+2])
 
 		flashcards = append(flashcards, Flashcard{
-			Suuid:    utils.GenerateShortUUID(),
+			Suuid:    qstr.GenerateShortUUID(),
 			Category: category,
 			Front:    front,
 			Back:     back,
@@ -38,15 +40,16 @@ func main() {
 
 	jsonData, err := json.MarshalIndent(flashcards, "", "\t")
 	if err != nil {
-		fmt.Printf("Error marshaling JSON: %v\n", err)
+
+		qcli.Message(fmt.Sprintf("Error marshaling JSON: %v\n", err), "error")
 		return
 	}
 
 	err = os.WriteFile("../../../datajson/flashcards.json", jsonData, 0644)
 	if err != nil {
-		fmt.Printf("Error writing JSON file: %v\n", err)
+		qcli.Message(fmt.Sprintf("Error writing JSON file: %v\n", err), "error")
 		return
 	}
 
-	fmt.Println("successfully updated flashcards.json")
+	qcli.Message("successfully updated flashcards.json", "success")
 }
