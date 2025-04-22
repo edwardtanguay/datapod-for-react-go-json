@@ -16,12 +16,15 @@ func main() {
 
 	exerciseNumber := os.Args[1]
 
-	switch exerciseNumber {
-	case "001":
-		learn.Ex001()
-	case "002":
-		learn.Ex002()
-	default:
-		qcli.Message(fmt.Sprintf("Invalid exercise number: %s\n", exerciseNumber), "error")
+	functions := map[string]func(){
+		"001": learn.Ex001,
+		"002": learn.Ex002,
 	}
+
+	fn, exists := functions[exerciseNumber]
+	if !exists {
+		qcli.Message(fmt.Sprintf("Invalid exercise number: %s\n", exerciseNumber), "error")
+		return
+	}
+	fn()
 }
