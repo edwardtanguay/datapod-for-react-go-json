@@ -87,6 +87,7 @@ func Start() {
 	if err != nil {
 		fmt.Println("Error creating the notification:", err)
 	} else {
-		fmt.Printf("Notification: %+v\n", notif)
+		fmt.Printf("Notification:\n  Title: %s\n  Subtitle: %s\n  Message: %s\n  Image: %s\n  Icon: %s\n  Priority: %d\n  Type: %s\n",
+			notif.title, notif.subtitle, notif.message, notif.image, notif.icon, notif.priority, notif.notType)
 	}
 }
