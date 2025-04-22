@@ -13,11 +13,8 @@ func Ex001() {
 	frameworks["react"] = "React"
 	frameworks["nextjs"] = "Next.js"
 	frameworks["vue"] = "Vue.js"
-
 	qdev.DisplayStringStringMap(frameworks)
-
 	delete(frameworks, "solid")
-
 	qdev.DisplayStringStringMap(frameworks)
 }
 

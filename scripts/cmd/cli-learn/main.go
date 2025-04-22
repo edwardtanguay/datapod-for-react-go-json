@@ -9,8 +9,8 @@ import (
 )
 
 func displayExercises(exercises map[string]func()) {
-	qcli.Message("Usage: go run main.go <exerciseNumber>", "info")
-	qcli.Message("Example: go run main.go 001\n", "info")
+	qcli.Message("Usage: npm run learn <exerciseNumber>", "info")
+	qcli.Message("Example: npm run learn 001\n", "info")
 	fmt.Println("Available exercises:")
 
 	for key := range exercises {
