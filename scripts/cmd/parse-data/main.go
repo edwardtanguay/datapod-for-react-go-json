@@ -45,7 +45,7 @@ func main() {
 		return
 	}
 
-	err = os.WriteFile("../../../datajson/flashcards.json", jsonData, 0644)
+	err = os.WriteFile("../../../parseddata/flashcards.json", jsonData, 0644)
 	if err != nil {
 		qcli.Message(fmt.Sprintf("Error writing JSON file: %v\n", err), "error")
 		return
